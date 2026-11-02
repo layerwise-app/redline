@@ -6,7 +6,10 @@ import { emailOTP } from 'better-auth/plugins/email-otp';
 import { tanstackStartCookies } from 'better-auth/tanstack-start';
 import { db } from '~/db';
 import * as schema from '~/db/schema';
+import { createWorkspaceFor } from '~/domain/access';
+import { prepareAccountDeletion } from '~/domain/workspaces';
 import { sendAuthEmail } from '~/lib/auth-email';
+import { serverCtx } from '~/server/context';
 
 export const auth = betterAuth({
   baseURL: env.BETTER_AUTH_URL || undefined,
@@ -21,6 +24,25 @@ export const auth = betterAuth({
   database: drizzleAdapter(db, { provider: 'sqlite', schema }),
   emailAndPassword: {
     enabled: true
+  },
+  user: {
+    deleteUser: {
+      enabled: true,
+      // Removes the Storage files of workspaces only this person owned.
+      beforeDelete: async (user) => {
+        await prepareAccountDeletion(serverCtx(), user.id);
+      }
+    }
+  },
+  databaseHooks: {
+    user: {
+      create: {
+        // Every new account gets its own workspace.
+        after: async (user) => {
+          await createWorkspaceFor(serverCtx(), user);
+        }
+      }
+    }
   },
   plugins: [
     emailOTP({

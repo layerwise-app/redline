@@ -6,13 +6,14 @@ import {
   createRootRouteWithContext
 } from '@tanstack/react-router';
 import type { QueryClient } from '@tanstack/react-query';
+import { useEffect } from 'react';
 import type * as React from 'react';
-import { ThemeProvider } from 'next-themes';
 import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary';
 import { NotFound } from '~/components/NotFound';
 import { Toaster } from '~/components/ui/sonner';
 import { TooltipProvider } from '~/components/ui/tooltip';
 import { site } from '~/lib/site';
+import { redline } from '~/redline.config';
 import { seo } from '~/utils/seo';
 import '~/styles/app.css';
 
@@ -34,7 +35,12 @@ export const Route = createRootRouteWithContext<{
         : []),
       ...seo({ title: site.name, description: site.description }).meta
     ],
-    links: [{ rel: 'icon', href: '/favicon.ico' }]
+    links: [
+      { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+      { rel: 'manifest', href: '/site.webmanifest' }
+    ]
   }),
   errorComponent: (props) => (
     <RootDocument>
@@ -46,6 +52,10 @@ export const Route = createRootRouteWithContext<{
 });
 
 function RootComponent() {
+  // Lets end-to-end tests wait for React instead of guessing with timers.
+  useEffect(() => {
+    document.documentElement.dataset.hydrated = 'true';
+  }, []);
   return (
     <RootDocument>
       <Outlet />
@@ -53,24 +63,37 @@ function RootComponent() {
   );
 }
 
+/** Design tokens from src/redline.config.ts, for app.css to read. */
+const TOKENS = `:root{${Object.entries({
+  '--rl-accent': redline.colors.accent,
+  '--rl-ink': redline.colors.ink,
+  '--rl-ink-muted': redline.colors.inkMuted,
+  '--rl-line': redline.colors.line,
+  '--rl-paper': redline.colors.paper,
+  '--rl-wash': redline.colors.wash,
+  '--rl-internal': redline.colors.internal,
+  '--rl-internal-wash': redline.colors.internalWash,
+  '--rl-internal-line': redline.colors.internalLine,
+  '--rl-canvas-light': redline.colors.canvasLight,
+  '--rl-canvas-dark': redline.colors.canvasDark,
+  '--rl-font-ui': redline.fonts.ui,
+  '--rl-font-mono': redline.fonts.mono
+})
+  .map(([name, value]) => `${name}:${value}`)
+  .join(';')}}`;
+
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
         <HeadContent />
+        <style dangerouslySetInnerHTML={{ __html: TOKENS }} />
       </head>
       <body>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <TooltipProvider>
-            {children}
-            <Toaster />
-          </TooltipProvider>
-        </ThemeProvider>
+        <TooltipProvider>
+          {children}
+          <Toaster />
+        </TooltipProvider>
         <Scripts />
       </body>
     </html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skerry Line winter timetable poster</title>
+<script src="art.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:800px;height:1000px;background:#0f2a42;color:#fbf6ea;font-family:"Avenir Next",sans-serif;position:relative;overflow:hidden}
+  h1{position:absolute;z-index:2;left:48px;top:48px;font-family:Rockwell,serif;font-size:72px;line-height:1.02;width:704px}
+  .art{position:absolute;left:0;bottom:190px;width:800px}
+  .times{position:absolute;left:0;right:0;bottom:0;height:190px;background:#fbf6ea;color:#0a1c2d;padding:26px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .times b{display:block;font-family:Rockwell,serif;font-size:40px;line-height:1.05}
+  .times span{font-weight:500}
+  .times small{display:block;font-size:14px;margin-top:6px;color:#2b3f50}
+</style>
+</head>
+<body>
+  <h1>Winter sailings start 2 November</h1>
+  <div class="art" id="art"></div>
+  <div class="times">
+    <div><b>07:10</b><span>Port Ellan to Hesker</span><small>Daily, 1h 15</small></div>
+    <div><b>09:40</b><span>Port Ellan to Tarrow</span><small>Mon to Sat, 1h 50</small></div>
+    <div><b>13:05</b><span>Port Ellan to Little Orn</span><small>Tue, Thu, Sat, 2h 15</small></div>
+  </div>
+<script>
+  const A = window.SkerryArt;
+  document.getElementById('art').innerHTML = A.harbour({ w: 800, h: 560, p: A.dusk, ferryX: 150, ferryY: 200 });
+</script>
+</body>
+</html>

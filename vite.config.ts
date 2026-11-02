@@ -15,6 +15,8 @@ export default defineConfig({
     watch: {
       ignored: [
         '**/.layerwise/**',
+        '**/.tmp/**',
+        '**/tests/**',
         '**/.local/**',
         '**/.tanstack/**',
         '**/.wrangler/**',

@@ -1,8 +1,31 @@
-# Layerwise project
+# Redline
+
+Design review for freelance designers and small studios. Upload mockups, send a
+link, and clients drop pins and approve a specific version with no account.
+
+Product name, colors, fonts, limits, and rate limits live in
+`src/redline.config.ts`.
+
+## Tests
+
+```bash
+pnpm test        # domain tests on real migrations (Vitest)
+pnpm test:e2e    # browser tests against the running preview (Playwright)
+pnpm lint
+```
+
+The browser tests create real accounts and upload real files to project Storage.
+They delete their workspaces when they pass; a failed run can leave test files.
+
+Sample mockups are rendered from `scripts/samples/` by `scripts/render-samples.mjs`,
+and the logo and favicons from `public/logo.svg` by `scripts/render-logo.mjs`.
+
+## Starter
+
 
 <a href="https://layerwise.app"><img src="https://layerwise.app/powered-by.png" alt="Powered by Layerwise" width="320" /></a>
 
-This is the starter used for new Layerwise projects. It is a full-stack React
+This project began from the Layerwise starter. It is a full-stack React
 app built with TanStack Start and deployed to Cloudflare Workers. The template
 includes Better Auth, a D1 database with Drizzle ORM, Tailwind CSS, shadcn/ui,
 and the Layerwise preview bridge.
@@ -27,6 +50,10 @@ during publishing.
 ## Important files
 
 - `src/routes/`: TanStack Router file routes
+- `src/domain/`: review, comment, upload, and email rules, with access checks
+- `src/server/`: server functions and request helpers around the domain
+- `src/components/review/`: the canvas, shared by the team, guests, and Try mode
+- `src/client/demo.ts`: the browser-storage data behind Try mode and the landing page
 - `src/lib/auth.ts`: Better Auth server configuration
 - `src/lib/auth.functions.ts`: client-callable server functions
 - `src/db/schema.ts`: Drizzle schema

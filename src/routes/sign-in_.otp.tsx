@@ -20,11 +20,13 @@ import {
   InputOTPGroup,
   InputOTPSlot
 } from '~/components/ui/input-otp';
+import { redirectSearch } from '~/lib/redirect-search';
 import { seo } from '~/utils/seo';
 
 export const Route = createFileRoute('/sign-in_/otp')({
   validateSearch: (search: Record<string, unknown>) => ({
-    email: typeof search.email === 'string' ? search.email.trim() : ''
+    email: typeof search.email === 'string' ? search.email.trim() : '',
+    ...redirectSearch(search)
   }),
   beforeLoad: ({ search }) => {
     if (!search.email) throw redirect({ to: '/sign-in' });
@@ -35,7 +37,7 @@ export const Route = createFileRoute('/sign-in_/otp')({
 
 function EmailOtpPage() {
   const navigate = useNavigate();
-  const { email } = Route.useSearch();
+  const { email, redirect: next } = Route.useSearch();
   const [otp, setOtp] = useState('');
 
   const verifyOtp = useMutation({
@@ -43,7 +45,7 @@ function EmailOtpPage() {
       const { error } = await authClient.signIn.emailOtp({ email, otp });
       if (error) throw new Error(error.message ?? 'Invalid code');
     },
-    onSuccess: () => navigate({ to: '/dashboard' })
+    onSuccess: () => navigate({ to: (next ?? '/dashboard') as never })
   });
 
   const resendOtp = useMutation({

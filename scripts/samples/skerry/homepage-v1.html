@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skerry Line homepage V1</title>
+<script src="art.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1440px;background:#faf7f1;color:#5e6b70;font-family:"Avenir Next",Avenir,sans-serif;font-size:15px;line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .nav{height:64px;display:flex;align-items:center;gap:15px;padding:0 28px;background:#faf7f1;font-size:12.5px;letter-spacing:.01em;color:#6f7d82;border-bottom:1px solid #e9e2d4;white-space:nowrap}
+  .logo{display:flex;align-items:center;gap:8px;margin-right:9px;color:#4d6470;font-family:Futura,sans-serif;font-size:15px;letter-spacing:.14em}
+  .logo svg{display:block}
+  .nav .right{margin-left:auto;display:flex;gap:14px}
+  .hero{position:relative;height:680px;overflow:hidden}
+  .hero .copy{position:absolute;left:96px;top:128px;width:600px;color:#fff}
+  .hero h1{font-weight:200;font-size:52px;line-height:1.14;letter-spacing:.005em}
+  .hero p{margin-top:16px;font-size:16px;font-weight:300;line-height:1.5;width:430px}
+  .hero .cta{display:inline-block;margin-top:26px;padding:9px 20px;border:1px solid #fff;border-radius:999px;font-size:13px;color:#fff;font-weight:400}
+  .section{padding:64px 96px}
+  .intro{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;height:300px;align-items:start}
+  .intro h2,.intro h3{font-size:18px;font-weight:400;color:#62737a;margin-bottom:10px}
+  .intro p{font-weight:300}
+  .label{font-size:18px;font-weight:400;color:#62737a;margin-bottom:22px}
+  .islands{background:#f3eee2;padding-top:56px;padding-bottom:64px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .card h4{font-size:16px;font-weight:400;color:#62737a;margin-top:14px}
+  .card p{font-weight:300;font-size:14px;margin-top:4px}
+  .card a{display:inline-block;margin-top:8px;font-size:13px;color:#7fa0aa}
+  .fleet{display:grid;grid-template-columns:440px 1fr;gap:64px;align-items:center;padding-top:56px;padding-bottom:56px}
+  .fleet p{font-weight:300;margin-bottom:10px}
+  .news{background:#f3eee2;padding-top:48px;padding-bottom:52px}
+  .newslist{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .newslist small{display:block;font-size:12px;color:#94a3a8;margin-bottom:4px}
+  .newslist h4{font-size:15px;font-weight:400;color:#62737a}
+  .buried{padding:36px 96px 40px;background:#faf7f1;font-size:12px;color:#94a2a5}
+  .buried h5{font-size:13px;font-weight:400;color:#8a9a9f;margin-bottom:10px}
+  .buried table{border-collapse:collapse;width:640px;font-size:11.5px}
+  .buried td,.buried th{padding:3px 12px 3px 0;text-align:left;font-weight:300;border-bottom:1px solid #efe9dc}
+  .buried .two{display:grid;grid-template-columns:660px 1fr;gap:40px}
+  footer{background:#dfe6e4;padding:36px 96px 38px;color:#74868b;font-size:12.5px;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+  <nav class="nav" data-pin="nav">
+    <a class="logo"><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="none" stroke="#4d6470" stroke-width="1.5"/><path d="M3 13q4 -3 8 0t8 0" fill="none" stroke="#4d6470" stroke-width="1.5"/></svg>SKERRY LINE</a>
+    <a>Home</a><a>About Us</a><a>Our Fleet</a><a>Routes</a><a>Timetables</a><a>Fares</a><a>Freight</a><a>Groups</a><a>Island Guide</a><a>Offers</a><a>News</a><a>Sustainability</a><a>Careers</a><a>Contact</a>
+    <span class="right"><a>Search</a><a>Log in</a><a>Basket (0)</a></span>
+  </nav>
+
+  <header class="hero">
+    <div id="hero"></div>
+    <div class="copy">
+      <h1 data-pin="hero-title">Where the sea takes you, we go too</h1>
+      <p data-pin="hero-sub">Connecting island communities since 1961, with a modern fleet and a warm welcome on every crossing.</p>
+      <a class="cta" data-pin="hero-cta">Discover more</a>
+    </div>
+  </header>
+
+  <section class="section intro" data-pin="intro">
+    <div>
+      <h2>Welcome to Skerry Line</h2>
+      <p>For more than sixty years we have carried islanders, visitors, livestock and the post across the Sound. Whatever brings you aboard, we are glad to have you with us for the crossing.</p>
+    </div>
+    <div>
+      <h3>Our commitment</h3>
+      <p>We reinvest in the routes that keep the outer islands connected, and we are working towards hybrid propulsion on our two newest vessels by the end of the decade.</p>
+    </div>
+    <div>
+      <h3>Travel with confidence</h3>
+      <p>Free changes up to 24 hours before departure, sheltered seating on every deck, and crew who know these waters better than anyone.</p>
+    </div>
+  </section>
+
+  <section class="section islands">
+    <div class="label">Island guide</div>
+    <div class="cards">
+      <div class="card" data-pin="card-hesker"><div id="c1"></div><h4>Hesker</h4><p>Sea cliffs, puffin colonies and the long walk to Stack Point.</p><a>Read more</a></div>
+      <div class="card" data-pin="card-tarrow"><div id="c2"></div><h4>Tarrow</h4><p>Painted beach huts, three miles of white sand and a very good bakery.</p><a>Read more</a></div>
+      <div class="card" data-pin="card-orn"><div id="c3"></div><h4>Little Orn</h4><p>A working lighthouse, a tidal causeway and not much else, on purpose.</p><a>Read more</a></div>
+    </div>
+  </section>
+
+  <section class="section fleet" data-pin="fleet">
+    <div>
+      <div class="label" style="margin-bottom:12px">Our fleet</div>
+      <p>MV Kittiwake entered service in 2019 and carries 480 passengers and 62 cars. Her sister ship MV Fulmar joined the route the following spring.</p>
+      <p>Both ferries have step-free access from the car deck, a galley and a dog-friendly lounge on Deck 4.</p>
+    </div>
+    <div id="elev"></div>
+  </section>
+
+  <section class="section news">
+    <div class="label">News</div>
+    <div class="newslist">
+      <div><small>28 October</small><h4>Winter timetable begins 2 November</h4></div>
+      <div><small>14 October</small><h4>Hesker slipway works are complete, ahead of schedule</h4></div>
+      <div><small>30 September</small><h4>Islanders' discount card renewals now open</h4></div>
+    </div>
+  </section>
+
+  <section class="buried">
+    <div class="two">
+      <div data-pin="timetable">
+        <h5>Timetables</h5>
+        <table>
+          <tr><th>Route</th><th>Departs</th><th>Arrives</th><th>Duration</th></tr>
+          <tr><td>Port Ellan to Hesker</td><td>07:10</td><td>08:25</td><td>1h 15</td></tr>
+          <tr><td>Port Ellan to Tarrow</td><td>09:40</td><td>11:30</td><td>1h 50</td></tr>
+          <tr><td>Port Ellan to Little Orn</td><td>13:05</td><td>15:20</td><td>2h 15</td></tr>
+          <tr><td>Port Ellan to Hesker</td><td>17:30</td><td>18:45</td><td>1h 15</td></tr>
+        </table>
+      </div>
+      <div data-pin="fares">
+        <h5>Fares</h5>
+        <p>Foot passengers from £14.50 each way. Children under five travel free. For vehicle fares and groups, please contact our office.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer data-pin="footer">
+    <span>Skerry Line Ferries Ltd. Harbour Office, Port Ellan</span>
+    <span>Accessibility &nbsp; Privacy &nbsp; Conditions of carriage</span>
+  </footer>
+
+<script>
+  const A = window.SkerryArt;
+  document.getElementById('hero').innerHTML = A.harbour({ p: A.dawn, ferryX: 700, ferryY: 266 });
+  document.getElementById('c1').innerHTML = A.cliffs(A.dawn);
+  document.getElementById('c2').innerHTML = A.dunes(A.dawn);
+  document.getElementById('c3').innerHTML = A.light(A.dawn);
+  document.getElementById('elev').innerHTML = A.elevation({ ...A.dawn, hull: '#7f9aa4' });
+</script>
+</body>
+</html>

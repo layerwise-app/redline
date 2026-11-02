@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skerry Line homepage V2</title>
+<script src="art.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--ink:#0a1c2d;--deep:#0f2a42;--coral:#e8553a;--paper:#fbf6ea;--line:#d9d2c0;--muted:#46596a}
+  body{width:1440px;background:var(--paper);color:var(--ink);font-family:"Avenir Next",Avenir,sans-serif;font-size:16px;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:Rockwell,"Roboto Slab",serif;font-weight:700;letter-spacing:-.005em}
+  .nav{height:80px;display:flex;align-items:center;gap:36px;padding:0 96px;background:var(--deep);color:var(--paper);font-size:16px;font-weight:500}
+  .logo{display:flex;align-items:center;gap:12px;margin-right:32px;font-family:Futura,sans-serif;font-size:21px;font-weight:500;letter-spacing:.14em}
+  .nav .right{margin-left:auto;display:flex;align-items:center;gap:28px}
+  .btn{display:inline-block;background:var(--coral);color:var(--ink);font-weight:600;padding:11px 22px;border-radius:3px}
+  .hero{position:relative;height:640px;overflow:hidden;background:var(--deep)}
+  .hero .copy{position:absolute;left:96px;top:78px;width:640px;color:var(--paper)}
+  .hero h1{font-size:76px;line-height:1.02}
+  .hero p{margin-top:22px;font-size:20px;line-height:1.45;width:520px;color:#e8e3d2}
+  .hero .actions{display:flex;align-items:center;gap:24px;margin-top:30px}
+  .hero .primary{background:var(--coral);color:var(--ink);font-weight:600;font-size:19px;padding:16px 30px;border-radius:3px}
+  .hero .secondary{font-weight:500;font-size:17px;border-bottom:2px solid var(--paper);padding-bottom:2px}
+  .booking{position:relative;margin:-54px 96px 0;display:grid;grid-template-columns:1.1fr 1.1fr 1fr 1fr auto;background:var(--paper);border:1px solid var(--ink);box-shadow:0 2px 0 var(--ink)}
+  .booking div{padding:15px 22px 16px;border-right:1px solid var(--line)}
+  .booking label{display:block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .booking b{font-size:19px;font-weight:600}
+  .booking .go{display:flex;align-items:center;padding:0 34px;background:var(--ink);color:var(--paper);font-weight:600;font-size:17px;border:0}
+  .section{padding:64px 96px}
+  .sailings{padding-top:60px;padding-bottom:64px;display:grid;grid-template-columns:1fr 330px;gap:64px}
+  .head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px}
+  .head h2{font-size:40px;line-height:1.1}
+  .head a{font-weight:600;border-bottom:2px solid var(--ink)}
+  table{width:100%;border-collapse:collapse}
+  th{font-size:12px;letter-spacing:.09em;text-transform:uppercase;text-align:left;color:var(--muted);font-weight:600;padding:8px 14px 8px 0;border-bottom:2px solid var(--ink)}
+  td{padding:13px 14px 13px 0;border-bottom:1px solid var(--line);font-size:17px}
+  td.t{font-family:Rockwell,serif;font-weight:700;font-size:19px}
+  td.s{font-size:15px;font-weight:600}
+  .few{color:#a93a22}
+  .fares{border-left:1px solid var(--line);padding-left:36px}
+  .fares h3{font-size:26px;margin-bottom:12px}
+  .fares dl{display:grid;grid-template-columns:1fr auto;row-gap:10px;font-size:17px}
+  .fares dt{color:var(--muted)}
+  .fares dd{font-weight:600;font-variant-numeric:tabular-nums}
+  .fares p{margin-top:16px;font-size:14px;color:var(--muted)}
+  .islands{background:#efe7d2;padding-top:60px;padding-bottom:68px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:6px}
+  .card h3{font-size:30px;margin-top:16px;line-height:1.1}
+  .card .meta{font-weight:600;font-size:15px;margin-top:6px}
+  .card p{margin-top:8px;color:#2b3f50}
+  .fleet{display:grid;grid-template-columns:460px 1fr;gap:48px;align-items:center;padding-top:60px;padding-bottom:60px}
+  .fleet h2{font-size:36px;line-height:1.1;margin-bottom:12px}
+  .stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:30px;margin-top:18px}
+  .stats b{display:block;font-family:Rockwell,serif;font-size:30px;line-height:1.1}
+  .stats span{font-size:14px;color:var(--muted)}
+  .alerts{background:var(--deep);color:var(--paper);padding-top:44px;padding-bottom:48px}
+  .alerts h2{font-size:30px;margin-bottom:18px}
+  .alertlist{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .alertlist small{display:block;font-size:13px;color:#c8d2d6;margin-bottom:6px;font-weight:500}
+  .alertlist h4{font-size:18px;font-weight:600;line-height:1.3}
+  footer{background:var(--ink);color:#d3dade;padding:44px 96px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;font-size:15px}
+  footer b{display:block;color:var(--paper);margin-bottom:8px;font-weight:600}
+  footer a{display:block;line-height:1.75}
+</style>
+</head>
+<body>
+  <nav class="nav" data-pin="nav">
+    <a class="logo"><svg width="30" height="30" viewBox="0 0 22 22"><circle cx="11" cy="11" r="10" fill="none" stroke="#fbf6ea" stroke-width="1.5"/><path d="M3 13q4 -3 8 0t8 0" fill="none" stroke="#fbf6ea" stroke-width="1.5"/></svg>SKERRY LINE</a>
+    <a>Timetable</a><a>Fares</a><a>Islands</a><a>Freight</a><a>Help</a>
+    <span class="right"><a>Log in</a><a class="btn" data-pin="nav-book">Book</a></span>
+  </nav>
+
+  <header class="hero">
+    <div id="hero"></div>
+    <div class="copy">
+      <h1 data-pin="hero-title">Four sailings a day to the Outer Isles</h1>
+      <p data-pin="hero-sub">Hesker, Tarrow and Little Orn from Port Ellan. Foot passengers from £14.50, cars from £62.</p>
+      <div class="actions">
+        <a class="primary" data-pin="hero-cta">Book a crossing</a>
+        <a class="secondary">See today's sailings</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="booking" data-pin="booking">
+    <div><label>From</label><b>Port Ellan</b></div>
+    <div><label>To</label><b>Hesker</b></div>
+    <div><label>Depart</label><b>Today, 17:30</b></div>
+    <div><label>Travelling</label><b>2 adults, 1 car</b></div>
+    <button class="go">Find sailings</button>
+  </div>
+
+  <section class="section sailings">
+    <div data-pin="sailings">
+      <div class="head"><h2>Today's sailings</h2><a>Full timetable</a></div>
+      <table>
+        <tr><th>Route</th><th>Departs</th><th>Arrives</th><th>Crossing</th><th>Space</th></tr>
+        <tr><td>Port Ellan to Hesker</td><td class="t">07:10</td><td>08:25</td><td>1h 15</td><td class="s">Departed</td></tr>
+        <tr><td>Port Ellan to Tarrow</td><td class="t">09:40</td><td>11:30</td><td>1h 50</td><td class="s">Departed</td></tr>
+        <tr data-pin="sailing-orn"><td>Port Ellan to Little Orn</td><td class="t">13:05</td><td>15:20</td><td>2h 15</td><td class="s few">Few car spaces</td></tr>
+        <tr><td>Port Ellan to Hesker</td><td class="t">17:30</td><td>18:45</td><td>1h 15</td><td class="s">Space on all decks</td></tr>
+      </table>
+    </div>
+    <div class="fares" data-pin="fares">
+      <h3>Fares, each way</h3>
+      <dl>
+        <dt>Foot passenger</dt><dd>from £14.50</dd>
+        <dt>Under fives</dt><dd>Free</dd>
+        <dt>Car, up to 5 m</dt><dd data-pin="fare-car">from £62.00</dd>
+        <dt>Bicycle</dt><dd>£4.00</dd>
+      </dl>
+      <p>Free changes up to 24 hours before departure.</p>
+    </div>
+  </section>
+
+  <section class="section islands">
+    <div class="head"><h2>Three islands, one ferry</h2></div>
+    <div class="cards">
+      <div class="card" data-pin="card-hesker"><div id="c1"></div><h3>Hesker</h3><div class="meta">1h 15 from Port Ellan</div><p>Sea cliffs, puffin colonies and the long walk to Stack Point.</p></div>
+      <div class="card" data-pin="card-tarrow"><div id="c2"></div><h3>Tarrow</h3><div class="meta">1h 50 from Port Ellan</div><p>Painted beach huts, three miles of white sand and a very good bakery.</p></div>
+      <div class="card" data-pin="card-orn"><div id="c3"></div><h3>Little Orn</h3><div class="meta">2h 15 from Port Ellan</div><p>A working lighthouse, a tidal causeway and not much else, on purpose.</p></div>
+    </div>
+  </section>
+
+  <section class="section fleet" data-pin="fleet">
+    <div>
+      <h2>Built for this water</h2>
+      <p>MV Kittiwake and MV Fulmar have step-free access from the car deck, a galley and a dog-friendly lounge on Deck 4.</p>
+      <div class="stats" data-pin="stats">
+        <div><b>480</b><span>passengers</span></div>
+        <div><b>62</b><span>cars</span></div>
+        <div><b>1961</b><span>first sailing</span></div>
+      </div>
+    </div>
+    <div id="elev"></div>
+  </section>
+
+  <section class="section alerts" data-pin="alerts">
+    <h2>Service updates</h2>
+    <div class="alertlist">
+      <div><small>28 October</small><h4>Winter timetable begins 2 November</h4></div>
+      <div><small>14 October</small><h4>Hesker slipway works are complete, ahead of schedule</h4></div>
+      <div><small>30 September</small><h4>Islanders' discount card renewals now open</h4></div>
+    </div>
+  </section>
+
+  <footer data-pin="footer">
+    <div><b>Skerry Line Ferries Ltd.</b>Harbour Office, Port Ellan<br>Sailing since 1961</div>
+    <div><b>Travel</b><a>Timetable</a><a>Fares</a><a>Accessibility</a></div>
+    <div><b>Company</b><a>About us</a><a>Sustainability</a><a>Careers</a></div>
+    <div><b>Help</b><a>Contact</a><a>Privacy</a><a>Conditions of carriage</a></div>
+  </footer>
+
+<script>
+  const A = window.SkerryArt;
+  document.getElementById('hero').innerHTML = A.harbour({ h: 640, p: A.dusk, ferryX: 760, ferryY: 248 });
+  document.getElementById('c1').innerHTML = A.cliffs(A.day);
+  document.getElementById('c2').innerHTML = A.dunes(A.day);
+  document.getElementById('c3').innerHTML = A.light(A.day);
+  document.getElementById('elev').innerHTML = A.elevation(A.day);
+</script>
+</body>
+</html>

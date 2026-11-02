@@ -1,5 +1,6 @@
 import { createIsomorphicFn } from '@tanstack/react-start';
 import { getRequestUrl } from '@tanstack/react-start/server';
+import { redline } from '~/redline.config';
 
 type Site = {
   name: string;
@@ -23,16 +24,16 @@ type Site = {
 
 /** What search engines and link previews read about this site. */
 export const site: Site = {
-  name: 'My App',
-  description: 'Built with Layerwise',
+  name: redline.product.name,
+  description: redline.product.description,
   url: '',
-  image: '',
-  imageAlt: '',
+  image: '/og-image.png',
+  imageAlt: 'A design mockup in Redline with numbered review pins and a comment list.',
   googleSiteVerification: ''
 };
 
 /** Public pages in `/sitemap.xml`. Add every page search engines should find. */
-export const sitemapPaths: string[] = ['/'];
+export const sitemapPaths: string[] = ['/', '/try'];
 
 const requestOrigin = createIsomorphicFn()
   .server(() => getRequestUrl().origin)

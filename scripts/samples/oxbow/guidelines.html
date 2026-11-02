@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Oxbow Seed Company brand guidelines</title>
+<style>
+  @page{size:1280px 800px;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--field:#2f4a2e;--loam:#231f18;--husk:#efe6cf;--paper:#f8f3e4;--rust:#b24f24;--beet:#7d2337;--pollen:#e0a92e;--muted:#5d5745}
+  html,body{background:var(--paper);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:"Gill Sans","Gill Sans MT",sans-serif;color:var(--loam)}
+  .page{position:relative;width:1280px;height:800px;overflow:hidden;background:var(--paper);break-after:page;page-break-after:always}
+  #p6{break-after:auto;page-break-after:auto}
+  .serif{font-family:"Hoefler Text",Baskerville,serif}
+  .folio{position:absolute;left:72px;right:72px;bottom:32px;display:flex;justify-content:space-between;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .section-no{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-weight:600}
+  h2{font-family:"Hoefler Text",Baskerville,serif;font-weight:400;font-size:56px;line-height:1.04;letter-spacing:-.012em;margin-top:8px}
+  .lede{font-family:"Hoefler Text",Baskerville,serif;font-size:21px;line-height:1.36}
+  .cap{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .body{font-size:16px;line-height:1.45}
+  /* cover */
+  #p1{background:var(--field);color:var(--husk)}
+  #p1 .mark{position:absolute;left:72px;top:72px}
+  #p1 h1{position:absolute;left:72px;bottom:150px;font-family:"Hoefler Text",Baskerville,serif;font-weight:400;font-size:104px;line-height:.98;letter-spacing:-.02em}
+  #p1 .meta{position:absolute;left:72px;bottom:64px;display:flex;gap:40px;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+  #p1 .pat{position:absolute;right:0;top:0;width:500px;height:800px;background:var(--rust)}
+  /* logo */
+  #p2 .grid{position:absolute;left:72px;top:210px;right:72px;display:grid;grid-template-columns:560px 1fr;gap:56px}
+  .clear{position:relative;height:330px;background:var(--husk);display:flex;align-items:center;justify-content:center}
+  .small-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .tile{height:156px;display:flex;align-items:center;justify-content:center;position:relative}
+  .donts{position:absolute;left:72px;right:72px;bottom:72px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .dont{height:92px;background:#fff9ea;border:1px solid #dfd5b9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .dont span{position:absolute;left:6px;bottom:5px;padding:0 3px;font-size:12px;color:var(--muted);background:#fff9ea}
+  .dont svg{margin-top:-14px}
+  /* color */
+  #p3 .sw{position:absolute;left:72px;right:72px;top:206px;height:322px;display:grid;grid-template-columns:2.2fr 1.5fr 1fr 1fr 1fr;gap:0}
+  .swatch{padding:18px 18px 16px;display:flex;flex-direction:column;justify-content:flex-end;font-size:14px;line-height:1.4}
+  .swatch b{font-family:"Hoefler Text",Baskerville,serif;font-weight:400;font-size:27px;line-height:1.1;margin-bottom:8px;display:block}
+  .pairs{position:absolute;left:72px;right:72px;bottom:74px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .pair{height:100px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;font-size:14px}
+  .pair strong{font-family:"Hoefler Text",Baskerville,serif;font-weight:400;font-size:26px;line-height:1}
+  /* type */
+  #p4 .col{position:absolute;top:206px;bottom:72px}
+  .scale div{display:grid;grid-template-columns:96px 1fr;align-items:baseline;padding:14px 0;border-top:1px solid #d8cfb4}
+  /* application */
+  #p5 .packets{position:absolute;left:72px;top:210px;display:flex;gap:22px}
+  .packet{width:222px;height:352px;padding:18px 16px 14px;display:flex;flex-direction:column;color:var(--husk);position:relative}
+  .packet .mini{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+  .packet h4{font-family:"Hoefler Text",Baskerville,serif;font-weight:400;font-size:29px;line-height:1.02;margin-top:auto}
+  .packet small{font-size:12.5px;line-height:1.35;margin-top:7px;display:block}
+  /* voice */
+  #p6 table{width:100%;border-collapse:collapse;font-size:18px;line-height:1.3}
+  #p6 th{text-align:left;padding:0 26px 10px 0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--loam)}
+  #p6 td{padding:13px 26px 13px 0;vertical-align:top;border-bottom:1px solid #d8cfb4}
+  #p6 td.serif{font-size:21px;line-height:1.22}
+  .struck{color:#6d6552}
+</style>
+</head>
+<body>
+<section class="page" id="p1">
+  <div class="pat" id="cover-pattern" data-pin="cover-pattern"></div>
+  <div class="mark" data-pin="cover-mark"><svg width="120" height="120" viewBox="0 0 120 124"><use href="#oxbow" style="--m:#efe6cf;--s:#e0a92e"/></svg></div>
+  <h1 data-pin="cover-title">Oxbow<br>Seed<br>Company</h1>
+  <div class="meta"><span>Brand guidelines</span><span>Edition one, autumn</span><span>Prepared by Pellam Studio</span></div>
+</section>
+
+<section class="page" id="p2">
+  <div style="position:absolute;left:72px;top:56px;width:760px">
+    <div class="section-no">01 Logo</div>
+    <h2>The bend in the river</h2>
+  </div>
+  <p class="lede" style="position:absolute;left:806px;top:82px;width:402px">An oxbow forms when a river cuts itself a new course and leaves a loop of rich silt behind. The mark is that loop, holding a seed.</p>
+  <div class="grid">
+    <div>
+      <div class="clear" data-pin="clearspace">
+        <svg id="clear-overlay" style="position:absolute;left:0;top:0" width="560" height="330"></svg>
+        <div style="position:relative;display:flex;align-items:center;gap:14px" id="lockup-big"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:10px" class="body"><span>Clear space: x equals the height of the seed.</span></div>
+    </div>
+    <div class="small-grid">
+      <div class="tile" style="background:var(--field)" data-pin="reversed"><div id="lockup-rev"></div></div>
+      <div class="tile" style="background:var(--rust)"><div id="lockup-rust"></div></div>
+      <div class="tile" style="background:var(--husk);flex-direction:column;gap:10px" data-pin="minsize">
+        <svg width="24" height="25" viewBox="0 0 120 124"><use href="#oxbow" style="--m:#2f4a2e;--s:#b24f24"/></svg>
+        <span style="font-size:13px;color:var(--muted)">Minimum size, 8 mm or 24 px</span>
+      </div>
+      <div class="tile" style="background:var(--husk)"><span class="serif" style="font-size:32px;letter-spacing:-.01em;white-space:nowrap">Oxbow Seed Co.</span></div>
+    </div>
+  </div>
+  <div class="donts" id="donts" data-pin="donts"></div>
+  <div class="folio" style="display:none"></div>
+</section>
+
+<section class="page" id="p3">
+  <div style="position:absolute;left:72px;top:56px;width:700px">
+    <div class="section-no">02 Colour</div>
+    <h2>Grown, not printed</h2>
+  </div>
+  <p class="lede" style="position:absolute;left:806px;top:82px;width:402px">Five colours, taken from a field at the end of a season. Husk and Field do most of the work; the others are used in small, deliberate amounts.</p>
+  <div class="sw">
+    <div class="swatch" style="background:var(--husk)" data-pin="husk"><b>Husk</b>Pantone 7500 U<br>C6 M8 Y22 K0<br>#EFE6CF</div>
+    <div class="swatch" style="background:var(--field);color:var(--husk)" data-pin="field"><b>Field</b>Pantone 7743 U<br>C72 M46 Y80 K50<br>#2F4A2E</div>
+    <div class="swatch" style="background:var(--rust);color:#fff" data-pin="rust"><b>Rust</b>Pantone 7592 U<br>C20 M78 Y100 K10<br>#B24F24</div>
+    <div class="swatch" style="background:var(--beet);color:var(--husk)"><b>Beet</b>Pantone 7638 U<br>C30 M95 Y60 K35<br>#7D2337</div>
+    <div class="swatch" style="background:var(--pollen)" data-pin="pollen"><b>Pollen</b>Pantone 7555 U<br>C10 M34 Y92 K0<br>#E0A92E</div>
+  </div>
+  <div class="cap" style="position:absolute;left:72px;top:552px">Approved pairings, large text</div>
+  <div class="pairs" data-pin="pairs">
+    <div class="pair" style="background:var(--husk);color:var(--field)"><strong>Aa</strong><span>Field on Husk, 7.9:1</span></div>
+    <div class="pair" style="background:var(--field);color:var(--husk)"><strong>Aa</strong><span>Husk on Field, 7.9:1</span></div>
+    <div class="pair" style="background:var(--rust);color:#fff"><strong>Aa</strong><span>White on Rust, 5.2:1</span></div>
+    <div class="pair" style="background:var(--beet);color:var(--husk)"><strong>Aa</strong><span>Husk on Beet, 7.8:1</span></div>
+    <div class="pair" style="background:var(--pollen);color:var(--loam)"><strong>Aa</strong><span>Loam on Pollen, 7.7:1</span></div>
+    <div class="pair" style="background:var(--field);color:var(--pollen)" data-pin="pair-pollen"><strong>Aa</strong><span>Pollen on Field, 4.6:1</span></div>
+  </div>
+</section>
+
+<section class="page" id="p4">
+  <div style="position:absolute;left:72px;top:56px;width:700px">
+    <div class="section-no">03 Typography</div>
+    <h2>Two voices, one table</h2>
+  </div>
+  <p class="lede" style="position:absolute;left:806px;top:82px;width:402px">Hoefler Text speaks like an almanac. Gill Sans labels the drawers. We do not mix in a third.</p>
+  <div class="col" style="left:72px;width:520px" data-pin="specimen">
+    <div class="cap">Display and reading</div>
+    <div class="serif" style="font-size:186px;line-height:1;letter-spacing:-.02em;margin-top:4px">Aa&amp;g</div>
+    <div class="serif" style="font-size:28px;line-height:1.26;margin-top:10px">Sow when the soil crumbles in your hand and the blackbirds have started arguing about it.</div>
+    <div class="cap" style="margin-top:34px">Labels and small print</div>
+    <div style="font-size:70px;line-height:1.1;font-weight:400;margin-top:2px" data-pin="gill">Gill Sans 123</div>
+    <div style="font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Sowing depth &nbsp; Row spacing &nbsp; Days to harvest</div>
+  </div>
+  <div class="col scale" style="left:660px;width:548px" data-pin="scale">
+    <div class="cap" style="border:0;padding-top:0">Scale</div>
+    <div><span class="cap">Display</span><span class="serif" style="font-size:60px;line-height:1">Scarlet Runner</span></div>
+    <div><span class="cap">Title</span><span class="serif" style="font-size:38px;line-height:1.05">Bull's Blood Beet</span></div>
+    <div><span class="cap">Lede</span><span class="serif" style="font-size:22px;line-height:1.25">Open-pollinated, saved on the farm since 1974.</span></div>
+    <div><span class="cap">Body</span><span style="font-size:16px;line-height:1.4">Direct sow from April to July in fine, stone-free soil. Thin to 8 cm once seedlings show their first true leaves.</span></div>
+    <div data-pin="caption"><span class="cap">Caption</span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:1.4">Lot 26-114 &nbsp; 3 g, about 150 seeds &nbsp; Germination tested</span></div>
+    <div><span class="cap">Figures</span><span class="serif" style="font-size:22px;line-height:1.25">Old-style in running text: sown 1974, thinned to 8 cm.</span></div>
+    <div><span class="cap">Label</span><span style="font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:600">Sowing depth 2 cm</span></div>
+  </div>
+</section>
+
+<section class="page" id="p5">
+  <div style="position:absolute;left:72px;top:56px;width:760px">
+    <div class="section-no">04 Packaging</div>
+    <h2>The packet is the brand</h2>
+  </div>
+  <p class="lede" style="position:absolute;left:806px;top:82px;width:402px">One colour per crop family, one drawing, one name. A rack of Oxbow packets should read like a shelf of old field notebooks.</p>
+  <div class="packets" data-pin="packets">
+    <div class="packet" style="background:var(--beet)" data-pin="packet-beet"><div class="mini" id="m1"></div><div id="art-beet" style="margin-top:12px"></div><h4>Bull's Blood Beet</h4><small>Sow April to July. Deep red leaves, sweet roots.</small></div>
+    <div class="packet" style="background:var(--field)" data-pin="packet-bean"><div class="mini" id="m2"></div><div id="art-bean" style="margin-top:12px"></div><h4>Scarlet Runner Bean</h4><small>Sow May to June. Red flowers, long green pods.</small></div>
+    <div class="packet" style="background:var(--rust)" data-pin="packet-squash"><div class="mini" id="m3"></div><div id="art-squash" style="margin-top:12px"></div><h4>Delicata Squash</h4><small>Sow May. Cream skin, green stripes, keeps till March.</small></div>
+  </div>
+  <div style="position:absolute;left:800px;top:210px;width:408px">
+    <div class="cap" style="margin-bottom:8px">Seed pattern</div>
+    <div id="pattern-sample" style="height:196px;background:var(--husk)" data-pin="pattern"></div>
+    <p class="body" style="margin-top:10px">Eight seed shapes, drawn from our own lots at twenty times life size, set on a loose grid and rotated by hand. Use it for tissue, box liners and the inside of crates.</p>
+    <div style="margin-top:14px;display:flex;align-items:center;gap:16px;background:var(--field);color:var(--husk);padding:14px 16px" data-pin="crate">
+      <svg width="46" height="48" viewBox="0 0 120 124"><use href="#oxbow" style="--m:#efe6cf;--s:#e0a92e"/></svg>
+      <div><div class="cap" style="color:var(--husk)">Wholesale crate label</div><div class="serif" style="font-size:25px;line-height:1.1">Mixed Beans, 48 packets</div></div>
+    </div>
+  </div>
+  <div class="body" style="position:absolute;left:72px;top:578px;width:710px;color:var(--muted)">Packet: 88 x 140 mm, 120 gsm uncoated, printed in two spot colours. Sowing instructions on the back flap, set in Gill Sans at 7.5 pt.</div>
+  <div id="strip" style="position:absolute;left:0;right:0;bottom:0;height:110px;background:var(--rust)"></div>
+</section>
+
+<section class="page" id="p6">
+  <div style="position:absolute;left:72px;top:56px;width:760px">
+    <div class="section-no">05 Voice</div>
+    <h2>Write like a neighbour with a good shed</h2>
+  </div>
+  <div style="position:absolute;left:72px;right:430px;top:246px" data-pin="voice-table">
+    <table>
+      <tr><th style="width:150px">We are</th><th style="width:300px">We write</th><th>We avoid</th></tr>
+      <tr><td>Practical</td><td class="serif">Thin to 8 cm. It feels cruel. Do it anyway.</td><td class="struck">Ensure optimal plant spacing for best results.</td></tr>
+      <tr data-pin="voice-dry"><td>Dry</td><td class="serif">Slugs adore this one. So will you.</td><td class="struck">A customer favourite you'll love!</td></tr>
+      <tr><td>Specific</td><td class="serif">Saved on the farm since 1974, from a single row behind the barn.</td><td class="struck">Heritage quality, passed down through generations.</td></tr>
+      <tr><td>Patient</td><td class="serif">Parsnips take their time. Three weeks is normal. Stop checking.</td><td class="struck">Fast results with our premium seed range.</td></tr>
+    </table>
+  </div>
+  <div style="position:absolute;right:72px;top:246px;width:312px;background:var(--field);color:var(--husk);padding:26px 26px 22px" data-pin="back-flap">
+    <div class="cap" style="color:var(--husk)">Back flap, as printed</div>
+    <div class="serif" style="font-size:25px;line-height:1.2;margin-top:12px">Sow from April, once the soil stops sticking to your boots. Thin ruthlessly. Eat the thinnings.</div>
+    <div style="margin-top:16px;font-size:14px;line-height:1.5">Sowing depth 2 cm<br>Row spacing 30 cm<br>Days to harvest 60 to 70</div>
+    <div style="margin-top:22px"><svg width="40" height="42" viewBox="0 0 120 124"><use href="#oxbow" style="--m:#efe6cf;--s:#e0a92e"/></svg></div>
+  </div>
+  <div style="position:absolute;left:72px;bottom:44px;right:72px;display:flex;justify-content:space-between;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)"><span>Oxbow Seed Company</span><span>Questions to the studio, before the press</span></div>
+</section>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="oxbow">
+      <path d="M6 112 C30 112 40 100 32 78 C18 44 30 12 60 12 C90 12 102 44 88 78 C80 100 90 112 114 112" fill="none" stroke="var(--m)" stroke-width="16" stroke-linecap="round"/>
+      <path d="M60 36 C75 52 75 74 60 88 C45 74 45 52 60 36 Z" fill="var(--s)"/>
+    </g>
+  </defs>
+</svg>
+
+<script>
+  // Fixed-seed random so every render is the same.
+  let seed = 7;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+  const shapes = [
+    (c) => `<path d="M0 -14 C10 -4 10 8 0 15 C-10 8 -10 -4 0 -14Z" fill="${c}"/>`,
+    (c) => `<ellipse rx="13" ry="8" fill="${c}"/><path d="M-5 0 h10" stroke="#00000040" stroke-width="1.5"/>`,
+    (c) => `<path d="M-12 -5 C-6 -13 8 -13 12 -5 C14 3 6 12 -2 10 C-8 8 -4 2 -8 2 C-11 2 -14 -1 -12 -5Z" fill="${c}"/>`,
+    (c) => `<circle r="8.5" fill="${c}"/><circle r="2.6" fill="#00000030"/>`,
+    (c) => `<path d="M-14 0 Q0 -14 14 0 Q0 14 -14 0Z" fill="${c}"/><path d="M-9 0 H9" stroke="#00000030" stroke-width="1"/>`,
+    (c) => `<path d="M-11 6 C-12 -6 -2 -12 8 -11 C12 -2 8 10 -2 11 C-6 11 -10 10 -11 6Z" fill="${c}"/><path d="M-4 4 L4 -5" stroke="#00000030" stroke-width="1.2"/>`,
+    (c) => `<path d="M-3 -14 C8 -14 12 4 2 14 C-6 12 -10 -6 -3 -14Z" fill="${c}"/>`,
+    (c) => `<rect x="-11" y="-5" width="22" height="10" rx="5" fill="${c}"/>`
+  ];
+
+  function pattern(w, h, colors, step = 44) {
+    let s = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" style="display:block">`;
+    let row = 0;
+    for (let y = step / 2; y < h + step; y += step * 0.86, row++) {
+      for (let x = (row % 2 ? step / 2 : 0); x < w + step; x += step) {
+        const shape = shapes[Math.floor(rnd() * shapes.length)];
+        const color = colors[Math.floor(rnd() * colors.length)];
+        const px = x + (rnd() - 0.5) * 8;
+        const py = y + (rnd() - 0.5) * 8;
+        s += `<g transform="translate(${px.toFixed(1)} ${py.toFixed(1)}) rotate(${Math.floor(rnd() * 360)}) scale(${(0.8 + rnd() * 0.5).toFixed(2)})">${shape(color)}</g>`;
+      }
+    }
+    return s + '</svg>';
+  }
+
+  document.getElementById('cover-pattern').innerHTML = pattern(500, 800, ['#efe6cf', '#e0a92e', '#231f18', '#7d2337'], 58);
+  document.getElementById('pattern-sample').innerHTML = pattern(408, 196, ['#2f4a2e', '#b24f24', '#7d2337', '#e0a92e'], 38);
+  document.getElementById('strip').innerHTML = pattern(1280, 110, ['#efe6cf', '#231f18', '#e0a92e'], 40);
+
+  const mark = (m, s, size) => `<svg width="${size}" height="${size * 1.033}" viewBox="0 0 120 124"><use href="#oxbow" style="--m:${m};--s:${s}"/></svg>`;
+  const lockup = (m, s, size, fs, c) => `<div style="display:flex;align-items:center;gap:${size * 0.2}px">${mark(m, s, size)}<div style="font-family:'Hoefler Text',serif;font-size:${fs}px;line-height:.98;letter-spacing:-.012em;color:${c}">Oxbow<br>Seed Co.</div></div>`;
+  document.getElementById('lockup-big').innerHTML = lockup('#2f4a2e', '#b24f24', 112, 49, '#2f4a2e');
+  (function () {
+    const box = document.querySelector('#lockup-big').getBoundingClientRect();
+    const host = document.querySelector('.clear').getBoundingClientRect();
+    const x = 112 * 1.033 * (52 / 124); // seed height in the 112 px mark
+    const l = box.left - host.left, t = box.top - host.top;
+    document.getElementById('clear-overlay').innerHTML = `
+      <rect x="${l - x}" y="${t - x}" width="${box.width + 2 * x}" height="${box.height + 2 * x}" fill="none" stroke="#b24f24" stroke-dasharray="5 4"/>
+      <rect x="${l}" y="${t}" width="${box.width}" height="${box.height}" fill="none" stroke="#b24f24"/>
+      <g fill="#b24f24" font-family="Gill Sans" font-size="15" text-anchor="middle">
+        <text x="${l - x / 2}" y="${t + box.height / 2 + 5}">x</text><text x="${l + box.width + x / 2}" y="${t + box.height / 2 + 5}">x</text>
+        <text x="${l + box.width / 2}" y="${t - x / 2 + 5}">x</text><text x="${l + box.width / 2}" y="${t + box.height + x / 2 + 5}">x</text>
+      </g>`;
+  })();
+  document.getElementById('lockup-rev').innerHTML = lockup('#efe6cf', '#e0a92e', 76, 32, '#efe6cf');
+  document.getElementById('lockup-rust').innerHTML = lockup('#fff', '#231f18', 76, 32, '#fff');
+
+  const donts = [
+    ['Do not stretch', `<div style="transform:scaleX(1.5)">${lockup('#2f4a2e', '#b24f24', 28, 13, '#2f4a2e')}</div>`],
+    ['Do not recolour', lockup('#7d2337', '#2f4a2e', 32, 14, '#e0a92e')],
+    ['Do not rotate', `<div style="transform:rotate(-16deg)">${lockup('#2f4a2e', '#b24f24', 32, 14, '#2f4a2e')}</div>`],
+    ['Do not outline', `<svg width="40" height="42" viewBox="0 0 120 124"><path d="M6 112 C30 112 40 100 32 78 C18 44 30 12 60 12 C90 12 102 44 88 78 C80 100 90 112 114 112" fill="none" stroke="#2f4a2e" stroke-width="3"/></svg>`],
+    ['Do not place on pattern', `<div style="position:absolute;inset:0">${pattern(230, 92, ['#efe6cf', '#e0a92e', '#231f18'], 26)}</div><div style="position:relative">${mark('#2f4a2e', '#7d2337', 40)}</div>`]
+  ];
+  document.getElementById('donts').innerHTML = donts.map(([label, inner], i) => `<div class="dont" ${i === 4 ? 'style="background:#b24f24"' : ''}>${inner}<span>${label}</span></div>`).join('');
+
+  ['m1', 'm2', 'm3'].forEach((id) => {
+    document.getElementById(id).innerHTML = `${mark('#efe6cf', '#e0a92e', 20)}<span>Oxbow Seed Co.</span>`;
+  });
+
+  // Cut-paper vegetables.
+  document.getElementById('art-beet').innerHTML = `<svg viewBox="0 0 190 170" width="190" height="170">
+    <g fill="#2f4a2e"><path d="M92 92 C60 70 54 30 72 6 C96 26 104 62 96 92Z"/><path d="M98 92 C104 58 124 24 152 16 C156 46 134 80 104 94Z"/><path d="M90 92 C70 84 40 72 30 44 C58 40 84 62 96 90Z"/></g>
+    <g stroke="#e0a92e" stroke-width="2" fill="none"><path d="M94 88 C88 62 78 32 74 14"/><path d="M100 90 C110 66 132 36 148 22"/><path d="M92 90 C74 76 50 60 36 48"/></g>
+    <path d="M94 88 C126 86 146 104 142 124 C138 142 112 150 96 168 C80 150 54 142 50 124 C46 104 62 86 94 88Z" fill="#efe6cf"/>
+    <path d="M60 116 C78 110 112 110 132 116 M64 130 C80 126 108 126 126 130" stroke="#7d2337" stroke-width="3" fill="none"/>
+  </svg>`;
+  document.getElementById('art-bean').innerHTML = `<svg viewBox="0 0 190 170" width="190" height="170">
+    <path d="M26 164 C60 130 96 110 170 92" stroke="#e0a92e" stroke-width="3" fill="none"/>
+    <g fill="#efe6cf"><path d="M60 136 C44 106 56 76 88 70 C102 100 92 128 60 136Z"/><path d="M116 108 C110 76 128 48 160 48 C170 80 150 106 116 108Z"/></g>
+    <g fill="#b24f24"><circle cx="46" cy="74" r="12"/><circle cx="30" cy="96" r="9"/><circle cx="66" cy="50" r="9"/></g>
+    <path d="M46 74 L30 96 M46 74 L66 50 M46 74 L60 112" stroke="#e0a92e" stroke-width="2"/>
+    <path d="M120 112 C136 126 140 148 136 168 C126 158 112 134 120 112Z" fill="#e0a92e"/>
+    <path d="M152 94 C164 110 170 134 166 160 C156 148 144 118 152 94Z" fill="#e0a92e"/>
+  </svg>`;
+  document.getElementById('art-squash').innerHTML = `<svg viewBox="0 0 190 170" width="190" height="170">
+    <path d="M152 52 C168 44 176 28 172 14 C160 20 146 30 142 46Z" fill="#2f4a2e"/>
+    <path d="M30 118 C28 92 46 76 76 70 C102 64 130 52 150 50 C164 62 164 84 148 100 C128 122 92 142 62 146 C42 148 32 136 30 118Z" fill="#efe6cf"/>
+    <g fill="none" stroke="#2f4a2e" stroke-width="5" stroke-linecap="round"><path d="M42 106 C74 88 112 76 146 62"/><path d="M50 128 C84 112 122 94 154 76"/><path d="M42 86 C64 76 86 70 108 64"/></g>
+    <path d="M56 158 C86 160 124 150 154 126" fill="none" stroke="#e0a92e" stroke-width="3"/>
+  </svg>`;
+</script>
+</body>
+</html>

@@ -12,15 +12,18 @@ import {
 } from '~/components/ui/card';
 import { Input } from '~/components/ui/input';
 import { Label } from '~/components/ui/label';
+import { redirectSearch } from '~/lib/redirect-search';
 import { seo } from '~/utils/seo';
 
 export const Route = createFileRoute('/sign-up')({
-  head: () => seo({ title: 'Create an account', noindex: true }),
+  validateSearch: redirectSearch,
+  head: () => seo({ title: 'Create an account · Redline', noindex: true }),
   component: SignUpPage
 });
 
 function SignUpPage() {
   const navigate = useNavigate();
+  const { redirect } = Route.useSearch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,7 +39,7 @@ function SignUpPage() {
       });
       if (error) throw new Error(error.message ?? 'Failed to create account');
     },
-    onSuccess: () => navigate({ to: '/dashboard' })
+    onSuccess: () => navigate({ to: (redirect ?? '/dashboard') as never })
   });
 
   return (
@@ -119,7 +122,7 @@ function SignUpPage() {
             </Button>
             <p className='text-center text-sm text-muted-foreground'>
               Already have an account?{' '}
-              <Link to='/sign-in' className='underline'>
+              <Link to='/sign-in' search={{ redirect }} className='underline'>
                 Sign in
               </Link>
             </p>

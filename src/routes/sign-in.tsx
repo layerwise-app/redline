@@ -19,15 +19,18 @@ import {
 import { Input } from '~/components/ui/input';
 import { Label } from '~/components/ui/label';
 import { Separator } from '~/components/ui/separator';
+import { redirectSearch } from '~/lib/redirect-search';
 import { seo } from '~/utils/seo';
 
 export const Route = createFileRoute('/sign-in')({
-  head: () => seo({ title: 'Sign in', noindex: true }),
+  validateSearch: redirectSearch,
+  head: () => seo({ title: 'Sign in · Redline', noindex: true }),
   component: SignInPage
 });
 
 function SignInPage() {
   const navigate = useNavigate();
+  const { redirect } = Route.useSearch();
   const [passwordEmail, setPasswordEmail] = useState('');
   const [password, setPassword] = useState('');
   const [otpEmail, setOtpEmail] = useState('');
@@ -41,7 +44,7 @@ function SignInPage() {
       if (error) throw new Error(error.message ?? 'Failed to send code');
     },
     onSuccess: () =>
-      navigate({ to: '/sign-in/otp', search: { email: otpEmail } })
+      navigate({ to: '/sign-in/otp', search: { email: otpEmail, redirect } })
   });
 
   const signInWithPassword = useMutation({
@@ -52,7 +55,7 @@ function SignInPage() {
       });
       if (error) throw new Error(error.message ?? 'Failed to sign in');
     },
-    onSuccess: () => navigate({ to: '/dashboard' })
+    onSuccess: () => navigate({ to: (redirect ?? '/dashboard') as never })
   });
 
   return (
@@ -169,7 +172,7 @@ function SignInPage() {
           </Collapsible>
           <p className='text-center text-sm text-muted-foreground'>
             Don’t have an account?{' '}
-            <Link to='/sign-up' className='underline'>
+            <Link to='/sign-up' search={{ redirect }} className='underline'>
               Sign up
             </Link>
           </p>

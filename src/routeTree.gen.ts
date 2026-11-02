@@ -8,99 +8,280 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root';
-import { Route as IndexRouteImport } from './routes/index';
-import { Route as DashboardRouteImport } from './routes/dashboard';
-import { Route as ForgotPasswordRouteImport } from './routes/forgot-password';
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt';
-import { Route as SignInRouteImport } from './routes/sign-in';
-import { Route as SignUpRouteImport } from './routes/sign-up';
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml';
-import { Route as SignInOtpRouteImport } from './routes/sign-in_.otp';
-import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$';
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SignInRouteImport } from './routes/sign-in'
+import { Route as SignUpRouteImport } from './routes/sign-up'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TryRouteImport } from './routes/try'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as DashboardInboxRouteImport } from './routes/dashboard/inbox'
+import { Route as DashboardSettingsRouteImport } from './routes/dashboard/settings'
+import { Route as InviteTokenRouteImport } from './routes/invite.$token'
+import { Route as RTokenRouteImport } from './routes/r.$token'
+import { Route as SignInOtpRouteImport } from './routes/sign-in_.otp'
+import { Route as TryIndexRouteImport } from './routes/try/index'
+import { Route as TryInboxRouteImport } from './routes/try/inbox'
+import { Route as TrySettingsRouteImport } from './routes/try/settings'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiUploadsLogoRouteImport } from './routes/api/uploads/logo'
+import { Route as ApiUploadsPreviewRouteImport } from './routes/api/uploads/preview'
+import { Route as DashboardReviewsReviewIdRouteImport } from './routes/dashboard/reviews.$reviewId'
+import { Route as TryGuestReviewIdRouteImport } from './routes/try/guest.$reviewId'
+import { Route as TryReviewsReviewIdRouteImport } from './routes/try/reviews.$reviewId'
+import { Route as ApiGuestTokenLogoRouteImport } from './routes/api/guest/$token.logo'
+import { Route as ApiMediaLogoWorkspaceIdRouteImport } from './routes/api/media/logo.$workspaceId'
+import { Route as ApiMediaOriginalVersionIdRouteImport } from './routes/api/media/original.$versionId'
+import { Route as ApiMediaPagePageIdRouteImport } from './routes/api/media/page.$pageId'
+import { Route as ApiGuestTokenOriginalVersionIdRouteImport } from './routes/api/guest/$token.original.$versionId'
+import { Route as ApiGuestTokenPagePageIdRouteImport } from './routes/api/guest/$token.page.$pageId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
   id: '/forgot-password',
   path: '/forgot-password',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   id: '/robots.txt',
   path: '/robots.txt',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SignInRoute = SignInRouteImport.update({
   id: '/sign-in',
   path: '/sign-in',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SignUpRoute = SignUpRouteImport.update({
   id: '/sign-up',
   path: '/sign-up',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TryRoute = TryRouteImport.update({
+  id: '/try',
+  path: '/try',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardInboxRoute = DashboardInboxRouteImport.update({
+  id: '/inbox',
+  path: '/inbox',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const InviteTokenRoute = InviteTokenRouteImport.update({
+  id: '/invite/$token',
+  path: '/invite/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RTokenRoute = RTokenRouteImport.update({
+  id: '/r/$token',
+  path: '/r/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SignInOtpRoute = SignInOtpRouteImport.update({
   id: '/sign-in_/otp',
   path: '/sign-in/otp',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TryIndexRoute = TryIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TryRoute,
+} as any)
+const TryInboxRoute = TryInboxRouteImport.update({
+  id: '/inbox',
+  path: '/inbox',
+  getParentRoute: () => TryRoute,
+} as any)
+const TrySettingsRoute = TrySettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => TryRoute,
+} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
-  getParentRoute: () => rootRouteImport
-} as any);
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUploadsLogoRoute = ApiUploadsLogoRouteImport.update({
+  id: '/api/uploads/logo',
+  path: '/api/uploads/logo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiUploadsPreviewRoute = ApiUploadsPreviewRouteImport.update({
+  id: '/api/uploads/preview',
+  path: '/api/uploads/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardReviewsReviewIdRoute =
+  DashboardReviewsReviewIdRouteImport.update({
+    id: '/reviews/$reviewId',
+    path: '/reviews/$reviewId',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const TryGuestReviewIdRoute = TryGuestReviewIdRouteImport.update({
+  id: '/guest/$reviewId',
+  path: '/guest/$reviewId',
+  getParentRoute: () => TryRoute,
+} as any)
+const TryReviewsReviewIdRoute = TryReviewsReviewIdRouteImport.update({
+  id: '/reviews/$reviewId',
+  path: '/reviews/$reviewId',
+  getParentRoute: () => TryRoute,
+} as any)
+const ApiGuestTokenLogoRoute = ApiGuestTokenLogoRouteImport.update({
+  id: '/api/guest/$token/logo',
+  path: '/api/guest/$token/logo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMediaLogoWorkspaceIdRoute = ApiMediaLogoWorkspaceIdRouteImport.update({
+  id: '/api/media/logo/$workspaceId',
+  path: '/api/media/logo/$workspaceId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMediaOriginalVersionIdRoute =
+  ApiMediaOriginalVersionIdRouteImport.update({
+    id: '/api/media/original/$versionId',
+    path: '/api/media/original/$versionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiMediaPagePageIdRoute = ApiMediaPagePageIdRouteImport.update({
+  id: '/api/media/page/$pageId',
+  path: '/api/media/page/$pageId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiGuestTokenOriginalVersionIdRoute =
+  ApiGuestTokenOriginalVersionIdRouteImport.update({
+    id: '/api/guest/$token/original/$versionId',
+    path: '/api/guest/$token/original/$versionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiGuestTokenPagePageIdRoute = ApiGuestTokenPagePageIdRouteImport.update({
+  id: '/api/guest/$token/page/$pageId',
+  path: '/api/guest/$token/page/$pageId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute;
-  '/dashboard': typeof DashboardRoute;
-  '/forgot-password': typeof ForgotPasswordRoute;
-  '/robots.txt': typeof RobotsDottxtRoute;
-  '/sign-in': typeof SignInRoute;
-  '/sign-up': typeof SignUpRoute;
-  '/sitemap.xml': typeof SitemapDotxmlRoute;
-  '/sign-in/otp': typeof SignInOtpRoute;
-  '/api/auth/$': typeof ApiAuthSplatRoute;
+  '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRouteWithChildren
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/try': typeof TryRouteWithChildren
+  '/dashboard/inbox': typeof DashboardInboxRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/invite/$token': typeof InviteTokenRoute
+  '/r/$token': typeof RTokenRoute
+  '/sign-in/otp': typeof SignInOtpRoute
+  '/try/inbox': typeof TryInboxRoute
+  '/try/settings': typeof TrySettingsRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/try/': typeof TryIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/uploads/logo': typeof ApiUploadsLogoRoute
+  '/api/uploads/preview': typeof ApiUploadsPreviewRoute
+  '/dashboard/reviews/$reviewId': typeof DashboardReviewsReviewIdRoute
+  '/try/guest/$reviewId': typeof TryGuestReviewIdRoute
+  '/try/reviews/$reviewId': typeof TryReviewsReviewIdRoute
+  '/api/guest/$token/logo': typeof ApiGuestTokenLogoRoute
+  '/api/media/logo/$workspaceId': typeof ApiMediaLogoWorkspaceIdRoute
+  '/api/media/original/$versionId': typeof ApiMediaOriginalVersionIdRoute
+  '/api/media/page/$pageId': typeof ApiMediaPagePageIdRoute
+  '/api/guest/$token/original/$versionId': typeof ApiGuestTokenOriginalVersionIdRoute
+  '/api/guest/$token/page/$pageId': typeof ApiGuestTokenPagePageIdRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute;
-  '/dashboard': typeof DashboardRoute;
-  '/forgot-password': typeof ForgotPasswordRoute;
-  '/robots.txt': typeof RobotsDottxtRoute;
-  '/sign-in': typeof SignInRoute;
-  '/sign-up': typeof SignUpRoute;
-  '/sitemap.xml': typeof SitemapDotxmlRoute;
-  '/sign-in/otp': typeof SignInOtpRoute;
-  '/api/auth/$': typeof ApiAuthSplatRoute;
+  '/': typeof IndexRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/dashboard/inbox': typeof DashboardInboxRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/invite/$token': typeof InviteTokenRoute
+  '/r/$token': typeof RTokenRoute
+  '/sign-in/otp': typeof SignInOtpRoute
+  '/try/inbox': typeof TryInboxRoute
+  '/try/settings': typeof TrySettingsRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/try': typeof TryIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/uploads/logo': typeof ApiUploadsLogoRoute
+  '/api/uploads/preview': typeof ApiUploadsPreviewRoute
+  '/dashboard/reviews/$reviewId': typeof DashboardReviewsReviewIdRoute
+  '/try/guest/$reviewId': typeof TryGuestReviewIdRoute
+  '/try/reviews/$reviewId': typeof TryReviewsReviewIdRoute
+  '/api/guest/$token/logo': typeof ApiGuestTokenLogoRoute
+  '/api/media/logo/$workspaceId': typeof ApiMediaLogoWorkspaceIdRoute
+  '/api/media/original/$versionId': typeof ApiMediaOriginalVersionIdRoute
+  '/api/media/page/$pageId': typeof ApiMediaPagePageIdRoute
+  '/api/guest/$token/original/$versionId': typeof ApiGuestTokenOriginalVersionIdRoute
+  '/api/guest/$token/page/$pageId': typeof ApiGuestTokenPagePageIdRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport;
-  '/': typeof IndexRoute;
-  '/dashboard': typeof DashboardRoute;
-  '/forgot-password': typeof ForgotPasswordRoute;
-  '/robots.txt': typeof RobotsDottxtRoute;
-  '/sign-in': typeof SignInRoute;
-  '/sign-up': typeof SignUpRoute;
-  '/sitemap.xml': typeof SitemapDotxmlRoute;
-  '/sign-in_/otp': typeof SignInOtpRoute;
-  '/api/auth/$': typeof ApiAuthSplatRoute;
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRouteWithChildren
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/try': typeof TryRouteWithChildren
+  '/dashboard/inbox': typeof DashboardInboxRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/invite/$token': typeof InviteTokenRoute
+  '/r/$token': typeof RTokenRoute
+  '/sign-in_/otp': typeof SignInOtpRoute
+  '/try/inbox': typeof TryInboxRoute
+  '/try/settings': typeof TrySettingsRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/try/': typeof TryIndexRoute
+  '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/uploads/logo': typeof ApiUploadsLogoRoute
+  '/api/uploads/preview': typeof ApiUploadsPreviewRoute
+  '/dashboard/reviews/$reviewId': typeof DashboardReviewsReviewIdRoute
+  '/try/guest/$reviewId': typeof TryGuestReviewIdRoute
+  '/try/reviews/$reviewId': typeof TryReviewsReviewIdRoute
+  '/api/guest/$token/logo': typeof ApiGuestTokenLogoRoute
+  '/api/media/logo/$workspaceId': typeof ApiMediaLogoWorkspaceIdRoute
+  '/api/media/original/$versionId': typeof ApiMediaOriginalVersionIdRoute
+  '/api/media/page/$pageId': typeof ApiMediaPagePageIdRoute
+  '/api/guest/$token/original/$versionId': typeof ApiGuestTokenOriginalVersionIdRoute
+  '/api/guest/$token/page/$pageId': typeof ApiGuestTokenPagePageIdRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
+  fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/dashboard'
@@ -109,19 +290,57 @@ export interface FileRouteTypes {
     | '/sign-in'
     | '/sign-up'
     | '/sitemap.xml'
+    | '/try'
+    | '/dashboard/inbox'
+    | '/dashboard/settings'
+    | '/invite/$token'
+    | '/r/$token'
     | '/sign-in/otp'
-    | '/api/auth/$';
-  fileRoutesByTo: FileRoutesByTo;
+    | '/try/inbox'
+    | '/try/settings'
+    | '/dashboard/'
+    | '/try/'
+    | '/api/auth/$'
+    | '/api/uploads/logo'
+    | '/api/uploads/preview'
+    | '/dashboard/reviews/$reviewId'
+    | '/try/guest/$reviewId'
+    | '/try/reviews/$reviewId'
+    | '/api/guest/$token/logo'
+    | '/api/media/logo/$workspaceId'
+    | '/api/media/original/$versionId'
+    | '/api/media/page/$pageId'
+    | '/api/guest/$token/original/$versionId'
+    | '/api/guest/$token/page/$pageId'
+  fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/dashboard'
     | '/forgot-password'
     | '/robots.txt'
     | '/sign-in'
     | '/sign-up'
     | '/sitemap.xml'
+    | '/dashboard/inbox'
+    | '/dashboard/settings'
+    | '/invite/$token'
+    | '/r/$token'
     | '/sign-in/otp'
-    | '/api/auth/$';
+    | '/try/inbox'
+    | '/try/settings'
+    | '/dashboard'
+    | '/try'
+    | '/api/auth/$'
+    | '/api/uploads/logo'
+    | '/api/uploads/preview'
+    | '/dashboard/reviews/$reviewId'
+    | '/try/guest/$reviewId'
+    | '/try/reviews/$reviewId'
+    | '/api/guest/$token/logo'
+    | '/api/media/logo/$workspaceId'
+    | '/api/media/original/$versionId'
+    | '/api/media/page/$pageId'
+    | '/api/guest/$token/original/$versionId'
+    | '/api/guest/$token/page/$pageId'
   id:
     | '__root__'
     | '/'
@@ -131,110 +350,328 @@ export interface FileRouteTypes {
     | '/sign-in'
     | '/sign-up'
     | '/sitemap.xml'
+    | '/try'
+    | '/dashboard/inbox'
+    | '/dashboard/settings'
+    | '/invite/$token'
+    | '/r/$token'
     | '/sign-in_/otp'
-    | '/api/auth/$';
-  fileRoutesById: FileRoutesById;
+    | '/try/inbox'
+    | '/try/settings'
+    | '/dashboard/'
+    | '/try/'
+    | '/api/auth/$'
+    | '/api/uploads/logo'
+    | '/api/uploads/preview'
+    | '/dashboard/reviews/$reviewId'
+    | '/try/guest/$reviewId'
+    | '/try/reviews/$reviewId'
+    | '/api/guest/$token/logo'
+    | '/api/media/logo/$workspaceId'
+    | '/api/media/original/$versionId'
+    | '/api/media/page/$pageId'
+    | '/api/guest/$token/original/$versionId'
+    | '/api/guest/$token/page/$pageId'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  DashboardRoute: typeof DashboardRoute;
-  ForgotPasswordRoute: typeof ForgotPasswordRoute;
-  RobotsDottxtRoute: typeof RobotsDottxtRoute;
-  SignInRoute: typeof SignInRoute;
-  SignUpRoute: typeof SignUpRoute;
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute;
-  SignInOtpRoute: typeof SignInOtpRoute;
-  ApiAuthSplatRoute: typeof ApiAuthSplatRoute;
+  IndexRoute: typeof IndexRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SignInRoute: typeof SignInRoute
+  SignUpRoute: typeof SignUpRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TryRoute: typeof TryRouteWithChildren
+  InviteTokenRoute: typeof InviteTokenRoute
+  RTokenRoute: typeof RTokenRoute
+  SignInOtpRoute: typeof SignInOtpRoute
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiUploadsLogoRoute: typeof ApiUploadsLogoRoute
+  ApiUploadsPreviewRoute: typeof ApiUploadsPreviewRoute
+  ApiGuestTokenLogoRoute: typeof ApiGuestTokenLogoRoute
+  ApiMediaLogoWorkspaceIdRoute: typeof ApiMediaLogoWorkspaceIdRoute
+  ApiMediaOriginalVersionIdRoute: typeof ApiMediaOriginalVersionIdRoute
+  ApiMediaPagePageIdRoute: typeof ApiMediaPagePageIdRoute
+  ApiGuestTokenOriginalVersionIdRoute: typeof ApiGuestTokenOriginalVersionIdRoute
+  ApiGuestTokenPagePageIdRoute: typeof ApiGuestTokenPagePageIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/';
-      path: '/';
-      fullPath: '/';
-      preLoaderRoute: typeof IndexRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
-      id: '/dashboard';
-      path: '/dashboard';
-      fullPath: '/dashboard';
-      preLoaderRoute: typeof DashboardRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/forgot-password': {
-      id: '/forgot-password';
-      path: '/forgot-password';
-      fullPath: '/forgot-password';
-      preLoaderRoute: typeof ForgotPasswordRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/robots.txt': {
-      id: '/robots.txt';
-      path: '/robots.txt';
-      fullPath: '/robots.txt';
-      preLoaderRoute: typeof RobotsDottxtRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sign-in': {
-      id: '/sign-in';
-      path: '/sign-in';
-      fullPath: '/sign-in';
-      preLoaderRoute: typeof SignInRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sign-up': {
-      id: '/sign-up';
-      path: '/sign-up';
-      fullPath: '/sign-up';
-      preLoaderRoute: typeof SignUpRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof SignUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
-      id: '/sitemap.xml';
-      path: '/sitemap.xml';
-      fullPath: '/sitemap.xml';
-      preLoaderRoute: typeof SitemapDotxmlRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/try': {
+      id: '/try'
+      path: '/try'
+      fullPath: '/try'
+      preLoaderRoute: typeof TryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/inbox': {
+      id: '/dashboard/inbox'
+      path: '/inbox'
+      fullPath: '/dashboard/inbox'
+      preLoaderRoute: typeof DashboardInboxRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/settings': {
+      id: '/dashboard/settings'
+      path: '/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof DashboardSettingsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/invite/$token': {
+      id: '/invite/$token'
+      path: '/invite/$token'
+      fullPath: '/invite/$token'
+      preLoaderRoute: typeof InviteTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/r/$token': {
+      id: '/r/$token'
+      path: '/r/$token'
+      fullPath: '/r/$token'
+      preLoaderRoute: typeof RTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sign-in_/otp': {
-      id: '/sign-in_/otp';
-      path: '/sign-in/otp';
-      fullPath: '/sign-in/otp';
-      preLoaderRoute: typeof SignInOtpRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/sign-in_/otp'
+      path: '/sign-in/otp'
+      fullPath: '/sign-in/otp'
+      preLoaderRoute: typeof SignInOtpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/try/': {
+      id: '/try/'
+      path: '/'
+      fullPath: '/try/'
+      preLoaderRoute: typeof TryIndexRouteImport
+      parentRoute: typeof TryRoute
+    }
+    '/try/inbox': {
+      id: '/try/inbox'
+      path: '/inbox'
+      fullPath: '/try/inbox'
+      preLoaderRoute: typeof TryInboxRouteImport
+      parentRoute: typeof TryRoute
+    }
+    '/try/settings': {
+      id: '/try/settings'
+      path: '/settings'
+      fullPath: '/try/settings'
+      preLoaderRoute: typeof TrySettingsRouteImport
+      parentRoute: typeof TryRoute
+    }
     '/api/auth/$': {
-      id: '/api/auth/$';
-      path: '/api/auth/$';
-      fullPath: '/api/auth/$';
-      preLoaderRoute: typeof ApiAuthSplatRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/uploads/logo': {
+      id: '/api/uploads/logo'
+      path: '/api/uploads/logo'
+      fullPath: '/api/uploads/logo'
+      preLoaderRoute: typeof ApiUploadsLogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/uploads/preview': {
+      id: '/api/uploads/preview'
+      path: '/api/uploads/preview'
+      fullPath: '/api/uploads/preview'
+      preLoaderRoute: typeof ApiUploadsPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/reviews/$reviewId': {
+      id: '/dashboard/reviews/$reviewId'
+      path: '/reviews/$reviewId'
+      fullPath: '/dashboard/reviews/$reviewId'
+      preLoaderRoute: typeof DashboardReviewsReviewIdRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/try/guest/$reviewId': {
+      id: '/try/guest/$reviewId'
+      path: '/guest/$reviewId'
+      fullPath: '/try/guest/$reviewId'
+      preLoaderRoute: typeof TryGuestReviewIdRouteImport
+      parentRoute: typeof TryRoute
+    }
+    '/try/reviews/$reviewId': {
+      id: '/try/reviews/$reviewId'
+      path: '/reviews/$reviewId'
+      fullPath: '/try/reviews/$reviewId'
+      preLoaderRoute: typeof TryReviewsReviewIdRouteImport
+      parentRoute: typeof TryRoute
+    }
+    '/api/guest/$token/logo': {
+      id: '/api/guest/$token/logo'
+      path: '/api/guest/$token/logo'
+      fullPath: '/api/guest/$token/logo'
+      preLoaderRoute: typeof ApiGuestTokenLogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/media/logo/$workspaceId': {
+      id: '/api/media/logo/$workspaceId'
+      path: '/api/media/logo/$workspaceId'
+      fullPath: '/api/media/logo/$workspaceId'
+      preLoaderRoute: typeof ApiMediaLogoWorkspaceIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/media/original/$versionId': {
+      id: '/api/media/original/$versionId'
+      path: '/api/media/original/$versionId'
+      fullPath: '/api/media/original/$versionId'
+      preLoaderRoute: typeof ApiMediaOriginalVersionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/media/page/$pageId': {
+      id: '/api/media/page/$pageId'
+      path: '/api/media/page/$pageId'
+      fullPath: '/api/media/page/$pageId'
+      preLoaderRoute: typeof ApiMediaPagePageIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/guest/$token/original/$versionId': {
+      id: '/api/guest/$token/original/$versionId'
+      path: '/api/guest/$token/original/$versionId'
+      fullPath: '/api/guest/$token/original/$versionId'
+      preLoaderRoute: typeof ApiGuestTokenOriginalVersionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/guest/$token/page/$pageId': {
+      id: '/api/guest/$token/page/$pageId'
+      path: '/api/guest/$token/page/$pageId'
+      fullPath: '/api/guest/$token/page/$pageId'
+      preLoaderRoute: typeof ApiGuestTokenPagePageIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface DashboardRouteChildren {
+  DashboardInboxRoute: typeof DashboardInboxRoute
+  DashboardSettingsRoute: typeof DashboardSettingsRoute
+  DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardReviewsReviewIdRoute: typeof DashboardReviewsReviewIdRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardInboxRoute: DashboardInboxRoute,
+  DashboardSettingsRoute: DashboardSettingsRoute,
+  DashboardIndexRoute: DashboardIndexRoute,
+  DashboardReviewsReviewIdRoute: DashboardReviewsReviewIdRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
+interface TryRouteChildren {
+  TryInboxRoute: typeof TryInboxRoute
+  TrySettingsRoute: typeof TrySettingsRoute
+  TryIndexRoute: typeof TryIndexRoute
+  TryGuestReviewIdRoute: typeof TryGuestReviewIdRoute
+  TryReviewsReviewIdRoute: typeof TryReviewsReviewIdRoute
+}
+
+const TryRouteChildren: TryRouteChildren = {
+  TryInboxRoute: TryInboxRoute,
+  TrySettingsRoute: TrySettingsRoute,
+  TryIndexRoute: TryIndexRoute,
+  TryGuestReviewIdRoute: TryGuestReviewIdRoute,
+  TryReviewsReviewIdRoute: TryReviewsReviewIdRoute,
+}
+
+const TryRouteWithChildren = TryRoute._addFileChildren(TryRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DashboardRoute: DashboardRoute,
+  DashboardRoute: DashboardRouteWithChildren,
   ForgotPasswordRoute: ForgotPasswordRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SignInRoute: SignInRoute,
   SignUpRoute: SignUpRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TryRoute: TryRouteWithChildren,
+  InviteTokenRoute: InviteTokenRoute,
+  RTokenRoute: RTokenRoute,
   SignInOtpRoute: SignInOtpRoute,
-  ApiAuthSplatRoute: ApiAuthSplatRoute
-};
+  ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiUploadsLogoRoute: ApiUploadsLogoRoute,
+  ApiUploadsPreviewRoute: ApiUploadsPreviewRoute,
+  ApiGuestTokenLogoRoute: ApiGuestTokenLogoRoute,
+  ApiMediaLogoWorkspaceIdRoute: ApiMediaLogoWorkspaceIdRoute,
+  ApiMediaOriginalVersionIdRoute: ApiMediaOriginalVersionIdRoute,
+  ApiMediaPagePageIdRoute: ApiMediaPagePageIdRoute,
+  ApiGuestTokenOriginalVersionIdRoute: ApiGuestTokenOriginalVersionIdRoute,
+  ApiGuestTokenPagePageIdRoute: ApiGuestTokenPagePageIdRoute,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from './router.tsx';
-import type { createStart } from '@tanstack/react-start';
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
 declare module '@tanstack/react-start' {
   interface Register {
-    ssr: true;
-    router: Awaited<ReturnType<typeof getRouter>>;
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
   }
 }
