@@ -1,10 +1,12 @@
 // Renders public/logo.svg to public/logo.png and every favicon size.
+// Needs `playwright install chromium`, or PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { chromium } from '@playwright/test';
 
-const exe = `${process.env.HOME}/Library/Caches/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-mac-arm64/chrome-headless-shell`;
 const svg = readFileSync('public/logo.svg', 'utf8');
-const browser = await chromium.launch({ executablePath: exe });
+const browser = await chromium.launch({
+  executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined
+});
 
 async function render(size) {
   const page = await browser.newPage({ viewport: { width: size, height: size } });
@@ -45,12 +47,4 @@ frames.forEach(({ size, png }, index) => {
 });
 writeFileSync('public/favicon.ico', Buffer.concat([header, ...frames.map((frame) => frame.png)]));
 
-// A contact sheet at real sizes, for checking legibility.
-const sheet = await browser.newPage({ viewport: { width: 420, height: 140 }, deviceScaleFactor: 3 });
-await sheet.setContent(
-  `<body style="margin:0;display:flex;gap:18px;align-items:center;padding:16px;background:#fff">${[96, 48, 32, 24, 16]
-    .map((size) => `<span style="display:block;width:${size}px;height:${size}px">${svg.replace(/width="1024" height="1024"/, `width="${size}" height="${size}"`)}</span>`)
-    .join('')}<span style="width:32px;height:32px;padding:6px;background:#1c1c1e">${svg.replace(/width="1024" height="1024"/, 'width="32" height="32"')}</span></body>`
-);
-await sheet.screenshot({ path: '.tmp/shots/logo-sheet.png' });
 await browser.close();

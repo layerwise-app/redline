@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { ready, createReview, deleteWorkspace, dropPin, IMAGE, shareUrl, signUp, uploadFirstFile, type TestUser } from './helpers';
+import { BASE_URL } from './base-url';
 
 /**
  * Item 2, over real HTTP with real sessions: a member of another workspace, and
@@ -60,7 +61,7 @@ test.describe.serial('workspace isolation over HTTP', () => {
   test('another member can’t write a preview into its version', async () => {
     const response = await bob.context.request.post(`/api/uploads/preview?versionId=${versionId}&page=1`, {
       data: Buffer.from('RIFF0000WEBPVP8X'),
-      headers: { origin: 'http://127.0.0.1:58806', 'content-type': 'image/webp' }
+      headers: { origin: BASE_URL, 'content-type': 'image/webp' }
     });
     expect(response.status()).toBe(404);
   });

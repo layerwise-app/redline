@@ -10,9 +10,16 @@ Product name, colors, fonts, limits, and rate limits live in
 
 ```bash
 pnpm test        # domain tests on real migrations (Vitest)
-pnpm test:e2e    # browser tests against the running preview (Playwright)
 pnpm lint
+
+pnpm exec playwright install chromium   # once per machine
+pnpm test:e2e    # browser tests against the running preview (Playwright)
 ```
+
+The browser tests use the dev server Layerwise logged in
+`.layerwise/dev-server.log`, or `BASE_URL` if it's set. To use a Chromium of your
+own, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable. The render
+scripts below honor it too.
 
 The browser tests create real accounts and upload real files to project Storage.
 They delete their workspaces when they pass; a failed run can leave test files.

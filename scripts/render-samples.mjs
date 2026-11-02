@@ -1,5 +1,6 @@
 // Renders the sample mockups in scripts/samples/ to public/samples/.
 // Run from the project root: node scripts/render-samples.mjs
+// Needs `playwright install chromium`, or PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH.
 // Also writes scripts/samples/pins.json: the page-relative centre of every
 // element with a data-pin attribute, so sample comments land on real elements.
 import { chromium } from '@playwright/test';
@@ -14,8 +15,9 @@ const fixtures = resolve(root, 'tests/fixtures');
 mkdirSync(out, { recursive: true });
 mkdirSync(fixtures, { recursive: true });
 
-const executablePath = `${process.env.HOME}/Library/Caches/ms-playwright/chromium_headless_shell-1223/chrome-headless-shell-mac-arm64/chrome-headless-shell`;
-const browser = await chromium.launch({ executablePath });
+const browser = await chromium.launch({
+  executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined
+});
 
 const pins = {};
 const sizes = {};

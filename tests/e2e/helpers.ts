@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { expect, type Browser, type BrowserContext, type Page } from '@playwright/test';
+import { BASE_URL } from './base-url';
 
 export const FIXTURES = join(import.meta.dirname, '../fixtures');
 export const IMAGE = join(FIXTURES, 'sample-image.png');
@@ -32,7 +33,7 @@ export async function signUp(browser: Browser, name: string, viewport = { width:
   const page = await context.newPage();
   const response = await context.request.post('/api/auth/sign-up/email', {
     data: { name, email, password },
-    headers: { origin: new URL(page.url() === 'about:blank' ? 'http://127.0.0.1:58806' : page.url()).origin }
+    headers: { origin: BASE_URL }
   });
   expect(response.ok(), await response.text()).toBeTruthy();
   return { context, page, email, password, name };
