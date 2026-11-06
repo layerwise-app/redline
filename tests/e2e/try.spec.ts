@@ -23,12 +23,16 @@ async function dropPinOnEmptySpot(page: import('@playwright/test').Page) {
   throw new Error('No free spot on the page');
 }
 
+/** The Powered by Layerwise badge in the landing footer: a plain image read. */
+const BADGE = /^https:\/\/layerwise\.app\/powered-by(-dark)?\.png$/;
+
 /** Every request that isn't a plain read, and every server function call. */
 function watchWrites(page: import('@playwright/test').Page) {
   const writes: string[] = [];
   page.on('request', (request) => {
     const url = new URL(request.url());
     if (url.origin !== new URL(page.url() === 'about:blank' ? request.url() : page.url()).origin) {
+      if (request.method() === 'GET' && BADGE.test(url.href)) return;
       writes.push(`external ${request.method()} ${url.href}`);
       return;
     }

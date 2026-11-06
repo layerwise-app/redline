@@ -134,9 +134,24 @@ function Home() {
       </main>
 
       <footer className='border-t'>
-        <div className='mx-auto flex max-w-[1320px] items-center justify-between gap-3 px-3 py-4 text-xs text-ink-muted sm:px-5'>
+        <div className='mx-auto flex max-w-[1320px] flex-wrap items-center gap-x-6 gap-y-3 px-3 py-4 text-xs text-ink-muted sm:px-5'>
           <span>{redline.product.name}</span>
-          <span>All people and brands in the sample are fictional.</span>
+          <span className='sm:ml-auto'>All people and brands in the sample are fictional.</span>
+          <a
+            href='https://layerwise.app'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='shrink-0 rounded-sm'
+          >
+            <img
+              src='https://layerwise.app/powered-by.png'
+              alt='Powered by Layerwise'
+              width={174}
+              height={28}
+              loading='lazy'
+              className='block h-7 w-[174px]'
+            />
+          </a>
         </div>
       </footer>
     </div>
